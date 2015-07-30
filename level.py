@@ -11,9 +11,9 @@ import tools
 
 class Level(object):
     """
-    This class represents the whole starscape.  The tarscape consists of
+    This class represents the whole starscape.  The starscape consists of
     three star layers.  The player is drawn and updated by this class.
-    The player is contained in a pg.GroupSingle group.
+    The player is contained in a pg.sprite.GroupSingle group.
     """
     def __init__(self, viewport, player):
         self.image = prepare.GFX["stars"].copy()
