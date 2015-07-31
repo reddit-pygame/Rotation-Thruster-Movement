@@ -9,6 +9,9 @@ import prepare
 import tools
 
 
+BIG_STARS = tools.tile_surface((2048,2048), prepare.GFX["stars"], True)
+
+
 class Level(object):
     """
     This class represents the whole starscape.  The starscape consists of
@@ -16,7 +19,7 @@ class Level(object):
     The player is contained in a pg.sprite.GroupSingle group.
     """
     def __init__(self, viewport, player):
-        self.image = prepare.GFX["stars"].copy()
+        self.image = BIG_STARS.copy()
         self.rect = self.image.get_rect()
         player.rect.midbottom = self.rect.centerx, self.rect.bottom-50
         self.player_singleton = pg.sprite.GroupSingle(player)
@@ -79,4 +82,4 @@ def clear_callback(surface, rect):
     transparency.  We need to fill the rect with transparency first.
     """
     surface.fill((0,0,0,0), rect)
-    surface.blit(prepare.GFX["stars"], rect, rect)
+    surface.blit(BIG_STARS, rect, rect)
