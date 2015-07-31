@@ -24,6 +24,7 @@ class Level(object):
         self.viewport = viewport
         self.update_viewport(True)
         self.mid_viewport = self.viewport.copy()
+        self.mid_true = list(self.mid_viewport.topleft)
 
     def make_layers(self):
         """
@@ -56,7 +57,9 @@ class Level(object):
         change = (self.viewport.centerx-old_center[0],
                   self.viewport.centery-old_center[1])
         if not start:
-            self.mid_viewport.move_ip(change[0]*0.5, change[1]*0.5)
+            self.mid_true[0] += change[0]*0.5
+            self.mid_true[1] += change[1]*0.5
+            self.mid_viewport.topleft = self.mid_true
 
     def draw(self, surface):
         """
