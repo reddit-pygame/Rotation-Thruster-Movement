@@ -1,6 +1,6 @@
 # Rotation Thruster Movement   
 This is a challenge designed for [/r/pygame](https://www.reddit.com/r/pygame/)  
-[Link to challenge thread. (not live yet)](https://www.reddit.com/r/pygame/)
+[Link to challenge thread.](https://www.reddit.com/r/pygame/comments/3fe60j/challenge_thruster_style_movement/)
 
 This challenge uses a new base code from the previous, though the overall structure is very similar.  If you have any questions regarding functionality don't hesitate to ask.
 
@@ -21,10 +21,11 @@ Running `main.py` will start the program.  The player is updated and drawn by a 
 
 
 ### Suggestions:    
-You can find an example of updating with delta-time here (though not the most straight forward unfortunately):  
-[eight_dir_move_four_dir_anim](https://github.com/Mekire/meks-pygame-samples/blob/master/four_direction_movement/eight_dir_move_four_dir_anim.py)  
-Also, if you have never read it I highly recommend this article (not Python):  
+You can find an example of updating with delta-time in Pygame here:  
+https://github.com/Mekire/pygame-delta-time/blob/master/dt_example.py  
+Also, if you have never read them, I highly recommend these articles (not Python):
 http://gafferongames.com/game-physics/fix-your-timestep/  
+http://gameprogrammingpatterns.com/game-loop.html  
 For rotation, making sure the center of the rotating sprite doesn't move is important.  Any time you rotate an image, the bounding rectangle size changes.  You will need to set the new rectangles center to the position of the previous rectangles center.  Moving in the direction of a specific angle will require some rudimentary (but essential) trigonometry.  Also, remember that pygame rects can not hold floats; this may be important.
 
 
